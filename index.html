@@ -190,12 +190,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            关于
+            所有文章
           </a>
         </li>
       
@@ -210,22 +210,12 @@
         </li>
       
         
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-schedule">
-          <a href="/schedule/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
-            
-            日程表
+            关于我
           </a>
         </li>
       
@@ -262,7 +252,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/07/Dva知识点整理-项目使用总结/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/08/Dva知识点整理-项目使用总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黎贝卡">
@@ -281,7 +271,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/07/Dva知识点整理-项目使用总结/" itemprop="url">Dva知识点整理&&项目使用总结</a></h1>
+                <a class="post-title-link" href="/2017/11/08/Dva知识点整理-项目使用总结/" itemprop="url">Dva知识点整理&&项目使用总结</a></h1>
         
 
         <div class="post-meta">
@@ -293,8 +283,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-07T14:07:40+08:00">
-                2017-11-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-08T14:07:40+08:00">
+                2017-11-08
               </time>
             
 
@@ -354,8 +344,7 @@
 
       
         
-          
-            <h1 id="Dva是什么"><a href="#Dva是什么" class="headerlink" title="Dva是什么"></a>Dva是什么</h1><blockquote>
+          <h1 id="Dva是什么"><a href="#Dva是什么" class="headerlink" title="Dva是什么"></a>Dva是什么</h1><blockquote>
 <p>dva 是基于现有应用架构 (redux + react-router + redux-saga 等)的一层轻量封装，没有引入任何新概念，全部代码不到 100 行。( Inspired by elm and choo. )</p>
 </blockquote>
 <ul>
@@ -365,82 +354,13 @@
 <li>…</li>
 </ul>
 <p>可以说，<strong>dva是基于react+redux最佳实践上实现的封装方案，简化了redux和redux-saga使用上的诸多繁琐操作。</strong></p>
-<h1 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h1><p>官方推荐的：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">├── /mock/           # 数据mock的接口文件</span><br><span class="line">├── /src/            # 项目源码目录</span><br><span class="line">│ ├── /components/   # 项目组件</span><br><span class="line">│ ├── /routes/       # 路由组件（页面维度）</span><br><span class="line">│ ├── /models/       # 数据模型</span><br><span class="line">│ ├── /services/     # 数据接口</span><br><span class="line">│ ├── /utils/        # 工具函数</span><br><span class="line">│ ├── route.js       # 路由配置</span><br><span class="line">│ ├── index.js       # 入口文件</span><br><span class="line">│ ├── index.less    </span><br><span class="line">│ └── index.html    </span><br><span class="line">├── package.json     # 定义依赖的pkg文件</span><br><span class="line">└── proxy.config.js  # 数据mock配置文件</span><br></pre></td></tr></table></figure>
-<h1 id="初体验"><a href="#初体验" class="headerlink" title="初体验"></a>初体验</h1><h2 id="一个小Demo"><a href="#一个小Demo" class="headerlink" title="一个小Demo"></a>一个小Demo</h2><p><a href="https://jsfiddle.net/puftw0ea/3/embedded/js,html,css,result/" target="_blank" rel="external">Demo示例</a></p>
-<h2 id="5个API"><a href="#5个API" class="headerlink" title="5个API"></a>5个API</h2><ul>
-<li><code>app = dva(Opts)</code></li>
-<li><code>app.use(Hooks)</code></li>
-<li><code>app.models(ModelObject)</code></li>
-<li><code>app.router(Function)</code></li>
-<li><code>app.start([HTMLElement])</code></li>
-</ul>
-<h2 id="8个概念"><a href="#8个概念" class="headerlink" title="8个概念"></a>8个概念</h2><ul>
-<li>State</li>
-<li>Action</li>
-<li>Model<ul>
-<li>Reducer</li>
-<li>Effect</li>
-<li>Subscription</li>
-</ul>
-</li>
-<li>Router<ul>
-<li>RouteComponent</li>
-</ul>
-</li>
-</ul>
-<h1 id="数据流向"><a href="#数据流向" class="headerlink" title="数据流向"></a>数据流向</h1><p><img src="https://raw.githubusercontent.com/xuexueq/fileupload/master/images/dva_system.png" alt=""><br>数据的改变发生通常是通过：</p>
-<ul>
-<li>用户交互行为（用户点击按钮等）</li>
-<li>浏览器行为（如路由跳转等）触发的</li>
-</ul>
-<p>当此类行为会改变数据的时候可以通过 dispatch 发起一个 action，如果是同步行为会直接通过 Reducers 改变 State ，如果是异步行为（副作用）会先触发 Effects 然后流向 Reducers 最终改变 State 。</p>
-<p>所以在 dva 中，数据流向非常清晰简明，并且思路基本跟开源社区保持一致。如上图。</p>
-<h1 id="相关概念与理解"><a href="#相关概念与理解" class="headerlink" title="相关概念与理解"></a>相关概念与理解</h1><h2 id="定义model"><a href="#定义model" class="headerlink" title="定义model"></a>定义model</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">   namespace: &apos;monthCard&apos;,</span><br><span class="line">state: &#123;</span><br><span class="line">	list: [],</span><br><span class="line">    total: 0,</span><br><span class="line">    editData: &#123;&#125;,</span><br><span class="line">    loading: false</span><br><span class="line">&#125;,</span><br><span class="line">subscriptions: &#123;</span><br><span class="line">	setup(&#123; dispatch, history&#125;)&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;,</span><br><span class="line">effects: &#123;&#125;,</span><br><span class="line">reducers: &#123;&#125;</span><br></pre></td></tr></table></figure>
-<p>State是整个应用的数据层。应用的state被存储在一个object tree中。应用的初始state在model中定义，也就是说，由model state组成全局state。操作的时候每次都要当作不可变数据（immutable data）来对待，保证每次都是全新对象，没有引用关系，这样才能保证 State 的独立性，便于测试和追踪变化。</p>
-<p><code>namespace</code>是model state在全局state中所用到的key。</p>
-<blockquote>
-<p>这里的Model非MVC中的M，是用于把数据相关的逻辑聚合到一起。</p>
-</blockquote>
-<h2 id="完成component"><a href="#完成component" class="headerlink" title="完成component"></a>完成component</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">const monthCardPrice = (&#123;</span><br><span class="line">	monthCard,</span><br><span class="line">	monthCard: &#123;</span><br><span class="line">		list</span><br><span class="line">	&#125;,</span><br><span class="line">	diapacth</span><br><span class="line"> &#125;) =&gt; &#123;</span><br><span class="line"> 	const queryList = () =&gt; &#123;</span><br><span class="line">		dispatch(&#123;</span><br><span class="line">			type: `monthCard/query`,</span><br><span class="line">			payload: &#123;&#125;//需要传递的数据</span><br><span class="line">		&#125;)</span><br><span class="line"> 	&#125;</span><br><span class="line">	return (</span><br><span class="line">		&lt;div&gt;</span><br><span class="line">			&lt;button onclick=&#123;queryList&#125;&gt;查询&lt;/button&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const mapStateToProps = (&#123;</span><br><span class="line">	monthCard,</span><br><span class="line">	global</span><br><span class="line"> &#125;) =&gt; &#123;</span><br><span class="line"> 	return &#123;</span><br><span class="line"> 		monthCard,</span><br><span class="line"> 		global</span><br><span class="line"> 	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default connect(mapStateToProps)(monthCardPrice)</span><br></pre></td></tr></table></figure>
-<p>RouteComponent 表示 Router 里匹配路径的 Component，通常会绑定 model 的数据</p>
-<p>Presentational Component是独立的纯粹的，例如ant.design UI组件的react实现，每个组件跟业务数据并没有耦合关系，只是完成自己独立的任务，需要的数据通过 props 传递进来，需要操作的行为通过接口暴露出去。 而 Container Component 更像是状态管理器，它表现为一个容器，订阅子组件需要的数据，组织子组件的交互逻辑和展示。</p>
-<p>所以在 dva 中，通常需要 connect Model的组件都是 Route Components，组织在/routes/目录下，而/components/目录下则是纯组件（Presentational Components）。</p>
-<p>dva架构里component中基本不需要用到state。</p>
-<ul>
-<li><p>绑定数据<br>这里利用es6结构赋值通过props将参数传入组件。<code>monthCard</code>对应model上的state，通过<code>connect</code>来绑定绑定model state。这里connect来自react-redux。意味着Component里可以拿到Model中定义的数据，Model中也能接收到Component里dispatch的action。实现了Model和Component的连接。</p>
-</li>
-<li><p>Action<br>Action表示操作事件，可以是同步，也可以是异步。Action 是一个普通 javascript 对象，它是改变 State 的唯一途径。无论是从 UI 事件、网络回调，还是 WebSocket 等数据源所获得的数据，最终都会通过 dispatch 函数调用一个 action，从而改变对应的数据。</p>
-</li>
-</ul>
-<p>dispatch 函数，通过 type 属性指定对应的 actions 类型，而这个类型名在 reducers（effects）会一一对应，从而知道该去调用哪一个 reducers（effects），除了 type 以外，其它对象中的参数随意定义，都可以在对应的 reducers（effects）中获取，从而实现消息传递，将最新的数据传递过去更新 model 的数据（state）</p>
-<p>注意：Action在model自身模型以外定义时需要加model的namespace前缀, 在model中定义不需要加。</p>
-<ul>
-<li>添加样式:<br>CSS Modules会给组件的className加上hash字符串，来保证className仅对引用了样式的组件有效，如styles.normal可能会输出为normal___39QwY。<br>className的输出格式可以通过webpack.config进行修改。</li>
-</ul>
-<h2 id="更新state"><a href="#更新state" class="headerlink" title="更新state"></a>更新state</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">    namespace: &apos;monthCard&apos;,</span><br><span class="line">	state: &#123;</span><br><span class="line">		list: [],</span><br><span class="line">	    total: 0,</span><br><span class="line">	    editData: &#123;&#125;,</span><br><span class="line">	    loading: false</span><br><span class="line">	&#125;,</span><br><span class="line">	subscriptions: &#123;&#125;,</span><br><span class="line">	effects: &#123;&#125;,</span><br><span class="line">	reducers: &#123;</span><br><span class="line">+		updateState(state, action)&#123;</span><br><span class="line">+			return &#123;</span><br><span class="line">+				...state,</span><br><span class="line">+				...action.payload</span><br><span class="line">+			&#125;</span><br><span class="line">+		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p>reducer 是唯一可以更新 state 的地方，这个唯一性让我们的 App 更具可预测性，所有的数据修改都有据可查。reducer 是 pure function，他接收参数 state 和 action，返回新的 state，通过语句表达即 (state, action) =&gt; newState。该函数把一个集合归并成一个单值。</p>
-<p>Reducer 的概念来自于是函数式编程，在 dva 中，<strong>reducers 聚合积累的结果是当前 model 的 state 对象</strong>。通过 actions 中传入的值，与当前 reducers 中的值进行运算获得新的值（也就是新的 state）。</p>
-<p>注意：Reducer函数必须是纯函数。</p>
-<h2 id="Effects异步处理"><a href="#Effects异步处理" class="headerlink" title="Effects异步处理"></a>Effects异步处理</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+   //异步请求</span><br><span class="line">	//request 是我们封装的一个网络请求库</span><br><span class="line">+	async function queryFromService(data) &#123;</span><br><span class="line">+		return request(&quot;queryFromApi&quot;, &#123;</span><br><span class="line">+			data,</span><br><span class="line">+			method: &quot;post&quot;,</span><br><span class="line">+			dataType: &quot;payload&quot;</span><br><span class="line">+		&#125;)</span><br><span class="line">+	&#125;</span><br><span class="line"></span><br><span class="line">    namespace: &apos;monthCard&apos;,</span><br><span class="line">	state: &#123;</span><br><span class="line">		list: [],</span><br><span class="line">	    total: 0,</span><br><span class="line">	    editData: &#123;&#125;,</span><br><span class="line">	    loading: false</span><br><span class="line">	&#125;,</span><br><span class="line">	subscriptions: &#123;&#125;,</span><br><span class="line">	effects: &#123;</span><br><span class="line">+		* query(&#123; payload &#125;, &#123; call, put &#125;)&#123;</span><br><span class="line">+			yield put (&#123;</span><br><span class="line">+				type: `updateState`,</span><br><span class="line">+				payload: &#123;</span><br><span class="line">+					loading: true</span><br><span class="line">+				&#125;</span><br><span class="line">+			&#125;)</span><br><span class="line">+</span><br><span class="line">+			const &#123; data &#125; = yield call (queryFromService, parse(payload))</span><br><span class="line">+</span><br><span class="line">+			if(data)&#123;</span><br><span class="line">+				yield put(&#123;</span><br><span class="line">+			        type: &apos;querySuccess&apos;,</span><br><span class="line">+			        payload: &#123;</span><br><span class="line">+			        	loading: false,</span><br><span class="line">+			            list: data.data,</span><br><span class="line">+			            editData: data.data,</span><br><span class="line">+			            total: data.recordsTotal</span><br><span class="line">+		        	&#125;</span><br><span class="line">+				&#125;)</span><br><span class="line">+		    &#125; else &#123;</span><br><span class="line">+				yield put(&#123;</span><br><span class="line">+		         	type: &apos;querySuccess&apos;,</span><br><span class="line">+		         	payload: &#123;</span><br><span class="line">+			            data: &#123;&#125;,</span><br><span class="line">+			            loading: false</span><br><span class="line">+		         	&#125;</span><br><span class="line">+		        &#125;)</span><br><span class="line">+		    &#125;		</span><br><span class="line">+		&#125;,</span><br><span class="line">+		* create()&#123;&#125;,</span><br><span class="line">+		* &apos;delete&apos;()&#123;&#125;,//delete是关键字</span><br><span class="line">+		* update()&#123;&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;,</span><br><span class="line">	reducers: &#123;</span><br><span class="line">		updateState(state, action)&#123;</span><br><span class="line">			return &#123;</span><br><span class="line">				...state,</span><br><span class="line">				...action.payload</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line"></span><br><span class="line">+		querySuccess(state, action)&#123;</span><br><span class="line">+			if(action.payload.data)&#123;</span><br><span class="line">+				const &#123;</span><br><span class="line">+					data: &#123;</span><br><span class="line">+						status,</span><br><span class="line">+						message</span><br><span class="line">+					&#125;</span><br><span class="line">+				&#125; = action.payload</span><br><span class="line">+</span><br><span class="line">+				if(1 == status)&#123;</span><br><span class="line">+					//</span><br><span class="line">+				&#125;else &#123;</span><br><span class="line">+					Message.error(message)</span><br><span class="line">+				&#125;</span><br><span class="line">+			&#125;</span><br><span class="line">+</span><br><span class="line">+			return &#123;</span><br><span class="line">+				...state</span><br><span class="line">+			&#125;</span><br><span class="line">+		&#125;		</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p>当数据需要从服务器获取时，需要发起异步请求，请求到数据之后，通过调用 Reducers更新数据到全局state。dva 通过对 model 增加 effects 属性来处理 side effect(异步任务)，这是基于 redux-saga 实现的，语法为 generator。Generator 返回的是迭代器，通过 yield 关键字实现暂停功能。<a href="https://github.com/superRaytin/redux-saga-in-chinese" target="_blank" rel="external">Redux-saga 中文文档</a>。</p>
-<p><code>* query(action, {call, put, select}){}</code>表示一个worker Saga，监听所有的<code>query</code> action，并触发一个Api调用以获取服务器数据。当每个<code>query</code> action被发起时调用 call 和 put 都是 redux-saga 的 effects，<strong>call 表示调用异步函数，put 表示 dispatch action</strong>，其他的还有 select, take, fork, cancel 等，select 则可以用来访问其它 model。格式：<code>*(action, effects) =&gt; void</code></p>
-<p>在Effects里，Generator函数通过yield命令将异步操作同步化，无论是yield 亦或是 async 目的只有一个： 让异步编写跟同步一样 ，从而能够很好的控制执行流程。</p>
-<h2 id="订阅数据源"><a href="#订阅数据源" class="headerlink" title="订阅数据源"></a>订阅数据源</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">subscriptions: &#123;</span><br><span class="line">	setup(( dispatch, history ))&#123;</span><br><span class="line">		history.listen((&#123; pathname, query &#125;) =&gt; &#123;</span><br><span class="line">			if(pathToRegexp(`/y/monthCard/list`).test(pathname)) &#123;</span><br><span class="line">				dispatch(&#123;</span><br><span class="line">					type:`query`</span><br><span class="line">				&#125;)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Subscriptions 表示订阅，用于订阅一个数据源，然后按需 dispatch action。格式为 ({ dispatch, history }) =&gt; unsubscribe 。比如：当用户进入 /y/monthCard/list 页面时，触发 action query 加载数据。</p>
-<p>如果 url 规则比较复杂，比如 /users/:userId/search，那么匹配和 userId 的获取都会比较麻烦。这是推荐用 path-to-regexp 简化这部分逻辑。</p>
-<h2 id="定义路由"><a href="#定义路由" class="headerlink" title="定义路由"></a>定义路由</h2><p>路由决定进入url渲染哪些Component。history 默认是 hashHistory 并且带有 <code>_k</code> 参数，可以换成 browserHistory，也可以通过配置去掉 <code>_k</code> 参数。</p>
-<h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><ul>
-<li>dva-cli <a href="https://www.npmjs.com/package/dva-cli" target="_blank" rel="external">官方地址</a></li>
-<li>roadhog</li>
-<li>babel-plugin-dva-hmr <a href="https://www.npmjs.com/package/babel-plugin-dva-hmr" target="_blank" rel="external">官方地址</a></li>
-</ul>
-<h2 id="dva使用总结"><a href="#dva使用总结" class="headerlink" title="dva使用总结"></a>dva使用总结</h2><p>dva将所有与数据操作相关的逻辑集中放在一个地方处理和维护，在数据跟业务状态交互比较紧密的场景下，会使我们的代码更加清晰可控。尤其适用于数据跟业务状态关联性极强的企业级后台信息管理系统。</p>
-<p>对于一个企业级后台管理系统，由于要进行大量的数据操作，在设计model时将不同类型的业务需求数据操作分开处理，便于维护。</p>
-<p>项目的开发流程一般是从设计model state开始进行抽象数据，完成component后，将组件和model建立关联，通过dispatch一个action，在reducer中更新数据完成数据同步处理；当需要从服务器获取数据时，通过Effects数据异步处理，然后调用Reducer更新全局state。是一个单向的数据流动过程。解决了redux中代码分散和重写问题，总之，Dva：Build redux application easier and better。</p>
-<h1 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h1><p><a href="https://github.com/dvajs/dva/blob/master/README_zh-CN.md" target="_blank" rel="external">官方地址</a><br><a href="https://github.com/superRaytin/redux-saga-in-chinese" target="_blank" rel="external">Redux-saga 中文文档</a><br><a href="https://github.com/dvajs/dva-knowledgemap#%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82" target="_blank" rel="external">dva-knowledgemap</a><br><a href="http://slides.com/sorrycc/dva#/8/4" target="_blank" rel="external">dva: react application arch in ant financial</a></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/08/Dva知识点整理-项目使用总结/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -580,17 +500,15 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/04/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -680,13 +598,22 @@
               
               
               <div class="site-state-item site-state-categories">
-                
+                <a href="/categories/index.html">
                   <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
-                
+                </a>
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
             
 
           </nav>
@@ -695,12 +622,40 @@
 
           <div class="links-of-author motion-element">
             
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/xuexueq" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:qiaolingxx@gmail.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            
           </div>
 
           
           
 
           
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.jianshu.com/u/80bc7b3f7f9e" title="酸甜的草莓红豆" target="_blank">酸甜的草莓红豆</a>
+                  </li>
+                
+              </ul>
+            </div>
           
 
           
@@ -722,7 +677,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2017</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -787,7 +742,12 @@
   
 
 
+  
 
+
+
+  
+  
 
 
 
@@ -825,6 +785,21 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
   
 
 
